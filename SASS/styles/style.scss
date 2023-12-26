@@ -7,6 +7,22 @@
     box-sizing: border-box;
 }
 
+
+// Mixins
+@mixin text1($color: white, $size: 12px){
+    font-size: $size;
+    color: $color;
+    font-weight: 600;
+}
+
+
+// Placeholder selector & Extend
+%style1 {
+    text-decoration: underline;
+}
+
+
+// Nesting
 .div1{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -14,8 +30,17 @@
     justify-content: center;
     gap: 10px 10px;
     width: 100%;
+    padding: 2px;
     .div2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 160px;
         background-color: rgb(1, 45, 54);
+        border-radius: 6px;
+        p{
+            @include text1(rgb(255, 255, 255), 25px);
+            @extend %style1;
+        }
     }
 }
