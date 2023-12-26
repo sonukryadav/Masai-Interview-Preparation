@@ -1,0 +1,21 @@
+@import "header";
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.div1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    gap: 10px 10px;
+    width: 100%;
+    .div2{
+        height: 160px;
+        background-color: rgb(1, 45, 54);
+    }
+}
