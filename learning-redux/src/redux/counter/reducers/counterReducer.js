@@ -1,5 +1,5 @@
 // reducers/counterReducer.js
-import { INCREMENT, DECREMENT } from "../constants/actionTypes";
+import { INCREMENT, DECREMENT, INCREMENT_BY_VALUE } from "../constants/actionTypes";
 
 const initialState = {
     count: 0,
@@ -16,6 +16,11 @@ const counterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 count: state.count - 1,
+            };
+        case INCREMENT_BY_VALUE:
+            return {
+                ...state,
+                count: state.count + action.payload,
             };
         default:
             return state;
